@@ -1,22 +1,43 @@
 # Relay
 
+**Automatic launch chains for Windows** — start companion tools, local services, or background utilities before any chosen app, however you open it: from a shortcut, the Start menu, File Explorer, or another program.
+
 [English](#english) · [Русский](#русский)
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/main-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/main-light.png">
+    <img src="docs/screenshots/main-dark.png" alt="Relay main window showing launch chains for local dev stack, streaming studio, and database workspace" width="840">
+  </picture>
+</p>
 
 ---
 
 ## English
 
-Starts a chain of programs (for example, a VPN) before a chosen Windows program — however you open it: from a shortcut, the Start menu, File Explorer, or another application. Works with both classic `.exe` applications and Microsoft Store (MSIX) apps.
+Relay automatically launches one or more prerequisite programs before a target Windows application — whether you open it from a desktop shortcut, the Start menu, File Explorer, or another app. Works with both classic `.exe` applications and Microsoft Store (MSIX) apps.
+
+### Example workflows
+
+- **Local Dev Stack**: start Docker Desktop and wait until its local port is ready before opening VS Code.
+- **Streaming & Creative Studio**: launch OBS Studio and audio routing utilities in parallel before Blender, and close them automatically when you exit.
+- **Database Workspace**: start a local PostgreSQL service and wait for port `5432` before opening DataGrip — only when connected to your office Wi-Fi and plugged in.
 
 ### Features
 
-- **Ordered dependency chains** with readiness checks (process launch, local port availability on `127.0.0.1` / `::1`, or internet connectivity).
-- **Auto-close with target app**: optionally closes launched helper programs when the main app exits (shared across rules, so a common VPN stays up until the last app using it closes).
+- **Ordered & parallel chains** with readiness checks: process launch, local TCP port (`127.0.0.1` / `::1`), active network adapter, or internet connectivity.
+- **Auto-close with target app**: optionally closes launched helper programs when the main app exits (shared across rules, so a common service stays up until the last app using it closes).
 - **Elevated steps without repeated UAC prompts** for administrator-protected executables (such as programs installed under `Program Files`).
-- **Conditions**: trigger rules only on specific Wi-Fi networks, within a time window, or under a selected power state.
-- **System tray & mini-window**: quick access to toggle rules, launch on demand, toggle autostart, or pause all rules temporarily.
+- **Smart conditions**: trigger rules only on specific Wi-Fi networks, within a time window, or under a selected power state.
+- **Built-in Dry-Run check**: test paths, permissions, and readiness in the rule editor without launching your apps.
+- **System tray & mini-window**: toggle rules, launch on demand, manage autostart, view logs, or pause all rules temporarily.
 - **5 interface languages**: English, Russian, German, French, and Simplified Chinese.
-- **Update check**: optional daily check against GitHub Releases (can be disabled in Settings).
+- **Light & dark themes** following Windows preferences.
+
+<p align="center">
+  <img src="docs/screenshots/flyout-dark.png" alt="Relay system tray mini-window" width="380">
+</p>
 
 ### Installation (Windows 10 / 11 x64)
 
@@ -34,17 +55,24 @@ Starts a chain of programs (for example, a VPN) before a chosen Windows program 
 
 ## Русский
 
-Запускает цепочку программ (например, VPN) перед выбранной программой в Windows — при **любом** способе её запуска: с ярлыка, из меню «Пуск», Проводника или другой программы. Поддерживаются как обычные программы (`.exe`), так и приложения Microsoft Store (MSIX).
+Relay автоматически запускает цепочку вспомогательных программ или локальных сервисов перед выбранной программой в Windows — при **любом** способе её запуска: с ярлыка, из меню «Пуск», Проводника или другого приложения. Поддерживаются как обычные программы (`.exe`), так и приложения Microsoft Store (MSIX).
+
+### Примеры сценариев
+
+- **Локальная разработка**: запустить Docker Desktop и дождаться готовности локального порта перед открытием VS Code.
+- **Стриминг и графика**: параллельно поднять OBS Studio и аудио-утилиты перед запуском Blender и автоматически закрыть их после выхода.
+- **Работа с базами данных**: запустить локальный PostgreSQL и дождаться порта `5432` перед открытием DataGrip — только в офисной сети Wi-Fi и при питании от сети.
 
 ### Основные возможности
 
-- **Цепочки запуска по порядку** с проверкой готовности (появление процесса, открытие локального порта на `127.0.0.1` / `::1` или доступ в интернет).
-- **Автозакрытие вместе с программой**: может закрывать запущенные вспомогательные программы после выхода из основной (с общим учётом: общий VPN закроется только после закрытия последней нужной ему программы).
+- **Последовательные и параллельные цепочки** с проверкой готовности: появление процесса, открытие локального TCP-порта (`127.0.0.1` / `::1`), активность сетевого адаптера или доступ в интернет.
+- **Автозакрытие вместе с программой**: может закрывать запущенные вспомогательные программы после выхода из основной (с общим учётом: общий сервис закроется только после закрытия последней нужной ему программы).
 - **Запуск от администратора без постоянного UAC** для защищённых программ (например, установленных в `Program Files`).
 - **Условия срабатывания**: только в указанных сетях Wi-Fi, в заданное время или при нужном режиме питания.
-- **Значок в трее и мини-окно**: быстрое включение и выключение правил, ручной запуск, автозапуск и режим паузы.
+- **Проверка правила (Dry-Run)**: диагностика путей, прав и готовности прямо в редакторе без запуска приложений.
+- **Значок в трее и мини-окно**: быстрое включение и выключение правил, ручной запуск, автозапуск, просмотр журнала и режим паузы.
 - **5 языков интерфейса**: русский, английский, немецкий, французский и китайский (упрощённый).
-- **Проверка обновлений**: раз в день проверяет выход новых версий на GitHub (можно отключить в настройках).
+- **Светлая и тёмная темы** в стиле Windows.
 
 ### Установка (Windows 10 / 11 x64)
 
