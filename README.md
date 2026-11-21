@@ -55,6 +55,14 @@ Relay automatically launches one or more prerequisite programs before a target W
 
 ## Русский
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/main-dark-ru.png">
+    <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/main-light-ru.png">
+    <img src="docs/screenshots/main-dark-ru.png" alt="Главное окно Relay на русском языке" width="840">
+  </picture>
+</p>
+
 Relay автоматически запускает цепочку вспомогательных программ или локальных сервисов перед выбранной программой в Windows — при **любом** способе её запуска: с ярлыка, из меню «Пуск», Проводника или другого приложения. Поддерживаются как обычные программы (`.exe`), так и приложения Microsoft Store (MSIX).
 
 ### Примеры сценариев
@@ -73,6 +81,10 @@ Relay автоматически запускает цепочку вспомо�
 - **Значок в трее и мини-окно**: быстрое включение и выключение правил, ручной запуск, автозапуск, просмотр журнала и режим паузы.
 - **5 языков интерфейса**: русский, английский, немецкий, французский и китайский (упрощённый).
 - **Светлая и тёмная темы** в стиле Windows.
+
+<p align="center">
+  <img src="docs/screenshots/flyout-dark-ru.png" alt="Мини-окно Relay в системном трее" width="380">
+</p>
 
 ### Установка (Windows 10 / 11 x64)
 
